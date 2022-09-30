@@ -43,22 +43,24 @@ namespace netcore6webapiwithsqlserverdemo.Controllers
         //Add
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<IActionResult> Create(Personal personal)
+        public async Task<IActionResult> Create(Personal per)
         {
-            await _demoDbContext.Personals.AddAsync(personal);
+            //await _demoDbContext.Personals.AddAsync(personal);
+            //Console.WriteLine(personal);
+            await _demoDbContext.Personals.AddAsync(per);
             await _demoDbContext.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetById), new { id = personal.Id }, personal);
+            return CreatedAtAction(nameof(GetById), new { id = per.Id }, per);
         }
         //Update
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Update(int id, Personal personal)
+        public async Task<IActionResult> Update(int id, Personal per)
         {
-            if (id != personal.Id) return BadRequest();
-
-            _demoDbContext.Entry(personal).State = EntityState.Modified;
+            if (id != per.Id) return BadRequest();
+            //Console.WriteLine(personal);
+            _demoDbContext.Entry(per).State = EntityState.Modified;
             await _demoDbContext.SaveChangesAsync();
 
             return NoContent();
