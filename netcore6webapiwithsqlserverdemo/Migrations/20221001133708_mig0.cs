@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace netcore6webapiwithsqlserverdemo.DB.Migrations
+namespace netcore6webapiwithsqlserverdemo.Migrations
 {
-    public partial class firstmigsqlserver : Migration
+    public partial class mig0 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,7 +47,7 @@ namespace netcore6webapiwithsqlserverdemo.DB.Migrations
                     Born = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Department = table.Column<int>(type: "int", nullable: false),
                     Job = table.Column<int>(type: "int", nullable: false),
-                    Sex = table.Column<int>(type: "int", nullable: false),
+                    Sex = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Img = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

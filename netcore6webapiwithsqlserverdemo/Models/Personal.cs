@@ -8,12 +8,8 @@
         public DateTime Born { get; set; }
         public int Department { get; set; }
         public int Job { get; set; }
-        public Sex Sex { get; set; }
+        public string? Sex { get; set; }
         public string? Img { get; set; }
     }
 
-    public enum Sex
-    {
-        Male, Female
-    }
 }

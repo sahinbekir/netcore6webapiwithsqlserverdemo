@@ -9,11 +9,11 @@ using netcore6webapiwithsqlserverdemo.DB;
 
 #nullable disable
 
-namespace netcore6webapiwithsqlserverdemo.DB.Migrations
+namespace netcore6webapiwithsqlserverdemo.Migrations
 {
     [DbContext(typeof(DemoDbContext))]
-    [Migration("20220926135940_firstmigsqlserver")]
-    partial class firstmigsqlserver
+    [Migration("20221001133708_mig0")]
+    partial class mig0
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -85,8 +85,8 @@ namespace netcore6webapiwithsqlserverdemo.DB.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Sex")
-                        .HasColumnType("int");
+                    b.Property<string>("Sex")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
